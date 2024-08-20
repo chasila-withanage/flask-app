@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: flask-app-ingress
+spec:
+  rules:
+  - host: flask-app-test.com
+    http:
+      paths:
+      - path: /info
+        pathType: Prefix
+        backend:
+          service:
+            name: flask-app-service
+            port:
+              number: 80
+  defaultBackend:
+    service:
+      name: error-page
+      port:
+        number: 80

@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: error-page-html
+  namespace: default
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Error</title>
+    </head>
+    <body>
+        <h1>Error: Page not found</h1>
+        <p>The page you are looking for does not exist.</p>
+    </body>
+    </html>
+
